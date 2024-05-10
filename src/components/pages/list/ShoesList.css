@@ -1,0 +1,33 @@
+.shoes-list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shoes-item {
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.shoes-info {
+  flex: 1;
+}
+.size-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.size-details p {
+  margin-right: 10px;
+}
+.add-to-cart {
+  margin-top: 10px;
+}
+.size-btn{
+  cursor: pointer;
+}
+.size-btn:hover{
+  background-color: green;
+}

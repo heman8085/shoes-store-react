@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ShoesContext } from "../../store/ShoesContext";
 
 const AdminForm = ({ hideModalHandler }) => {
+  const { setShoesList } = useContext(ShoesContext);
   const [shoesDetails, setShoesDetails] = useState({
     name: "",
     description: "",
@@ -22,11 +24,12 @@ const AdminForm = ({ hideModalHandler }) => {
         },
       }
     );
-    const newData = await response.json();
-    setShoesDetails((prevData) => {
-      return {...prevData, newData}
-    })
-    console.log(shoesDetails);
+    const newDataKey = await response.json();
+    const newData = {
+      key: newDataKey,
+      ...shoesDetails,
+    };
+    setShoesList((prevList) => [...prevList, newData]);
     setShoesDetails({
       name: "",
       description: "",
@@ -38,6 +41,7 @@ const AdminForm = ({ hideModalHandler }) => {
   }
   
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <div>
         <div>
@@ -115,8 +119,9 @@ const AdminForm = ({ hideModalHandler }) => {
         </div>
         <button className="add-button" type="submit" onClick={handleSubmit}>Add Product</button>
       </div>
-      <button onClick={hideModalHandler}>close</button>
     </form>
+      <button onClick={hideModalHandler}>close</button>
+    </div>
   );
 };
 

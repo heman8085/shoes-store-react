@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { ShoesContext } from "../../store/ShoesContext";
 import "./ShoesList.css";
 
@@ -18,9 +18,7 @@ const ShoesList = ({ showModalHandler }) => {
             </div>
             <div className="size-details">
               <p>Available Sizes:</p>
-              <button className="size-btn">S: {shoes.S}</button>
-              <button className="size-btn">M: {shoes.M}</button>
-              <button className="size-btn">L: {shoes.L}</button>
+              <button>{shoes.size}</button>
             </div>
             <div className="add-to-cart">
               <button onClick={() => addToCartHandler(shoes)}>

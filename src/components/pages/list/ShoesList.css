@@ -25,9 +25,16 @@
 .add-to-cart {
   margin-top: 10px;
 }
-.size-btn{
+.size-btn {
   cursor: pointer;
+  background-color: #212529;
+  color: #fff;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
 }
-.size-btn:hover{
+
+.size-btn.selected {
   background-color: green;
 }

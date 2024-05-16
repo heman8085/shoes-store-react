@@ -28,9 +28,7 @@ const ShoesCart = () => {
             <p>{item.description}</p>
           </div>
           <div className="cart_buttons">
-            <span>S: {item.S} </span>
-            <span>M: {item.M} </span>
-            <span>L: {item.L} </span>
+            <span>size : {item.size }</span>
           </div>
           <div className="item-price">
             <span>Rs. {item.price}</span>
